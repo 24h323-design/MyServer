@@ -1,152 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rupak Kumar - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyPortfolio - Syed Tippu</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Styles */
+    * {
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
       color: #333;
+      background: #f9f9f9;
     }
+
+    /* Navbar */
     header {
-      background: #200192;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background: #390303;
+      color: #fff;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    header h1 {
-      margin: 10px 0;
-    }
+
     nav {
-      background: #333;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 20px;
-      flex-wrap: wrap;
     }
+
     .logo {
-      color: #fff;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
     }
+
     .nav-links {
-      display: flex;
-      gap: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-    }
-    nav a:hover {
-      background: #210291;
-    }
-    section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .skills-list, .projects-list, .certificates-list {
       list-style: none;
-      padding: 0;
+      display: flex;
     }
-    .skills-list li, .projects-list li, .certificates-list li {
-      background: #e0e0e0;
-      margin: 5px 0;
-      padding: 10px;
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ea0bcd;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #83ab28, #393e46);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+    }
+
+    .hero span {
+      color: #eca50d;
+    }
+
+    .hero p {
+      margin: 15px 0;
+      font-size: 20px;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      border: none;
+      background: #ffdd57;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
       border-radius: 5px;
     }
-    footer {
+
+    .hero button:hover {
+      background: #07e1c8;
+    }
+
+    /* About Section */
+    .about, .projects, .contact, .skills {
+      padding: 60px 20px;
       text-align: center;
-      padding: 15px;
-      background: #333;
-      color: white;
+    }
+
+    .about h2, .projects h2, .contact h2, .skills h2 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #00adb5;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    /* Skills Section */
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
       margin-top: 20px;
+    }
+
+    .skill {
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      font-weight: bold;
+      color: #00adb5;
+    }
+
+    .typewriter-text {
+      display: inline;
+      border-right: 2px solid #e67979;
+      font-weight: bold;
+      font-size: 24px;
+      color: #219ea5;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Contact */
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background: #00adb5;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #007f86;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-
+  <!-- Navbar -->
   <header>
-    <h1>Syed Tippu A</h1>
-    <p>Student | Web Developer | Learner</p>
+    <nav>
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <div class="logo">Syed Tippu.A</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hi, I’m <strong>Rupak Kumar</strong>, a passionate student currently pursuing my BCA at AM Jain College. 
-      I enjoy coding, web development, and building creative projects that solve problems. 
-      My goal is to become a skilled full-stack developer and contribute to innovative solutions.
-    </p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Hello, I'm <span>Syed Tippu</span></h2>
+    <p>BCA student & Aspiring tech Developer</p>
+    <button>Hire Me</button>
   </section>
 
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <p><strong>BCA</strong> - AM Jain College (2024 - Present)</p>
-    <p><strong>HSC</strong> - Completed in 2024</p>
-    <p><strong>SSLC</strong> - Completed in 2022</p>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a creative and detail-oriented developer Skilled in HTML, CSS, Python, C++, JavaScript, and modern frameworks.</p>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>HTML & CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>C++</li>
-    </ul>
-  </section>
-
-  <!-- Certificates Section -->
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <ul class="certificates-list">
-      <li>HTML, CSS, JavaScript Certification - FreeCodeCamp</li>
-      <li>Python Programming - Coursera</li>
-      <li>Responsive Web Design - SoloLearn</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul class="projects-list">
-      <li><strong>Portfolio Website:</strong> A personal portfolio to showcase my work and skills.</li>
-      <li><strong>Calculator App:</strong> A simple web-based calculator using JavaScript.</li>
-    </ul>
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <p class="typewriter-text">I work with</p>
+    <div class="skills-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">C++</div>
+      <div class="skill">Frameworks</div>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="contact">
     <h2>Contact Me</h2>
-    <p>Email: rupakkumar@example.com</p>
-    <p>Phone: +91 919361610065</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Rupak Kumar | Designed by Me</p>
+    <p>© 2025 Syed Tippu. All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
